@@ -6,7 +6,7 @@ function MyPosts(){
         <div className={classes.my_post}>
             <div>
                 <h3>MY POST</h3>
-                <textarea name="" id="" cols="88" rows="5"></textarea>
+                <textarea name="" id="" cols="88" rows="3"></textarea>
                 <button className={classes.my_post__btn}>Send</button>
             </div>
             <Post message='hi'/>

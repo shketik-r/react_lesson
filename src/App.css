@@ -7,7 +7,7 @@ body {
     margin: 0 auto;
     margin-top: 20px;
     display: grid;
-    grid-template-areas: "header header " "nav section ";
+    grid-template-areas: "header header " "nav section " "footer footer";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
