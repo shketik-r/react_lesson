@@ -9,8 +9,8 @@ function MyPosts(){
                 <textarea name="" id="" cols="88" rows="5"></textarea>
                 <button className={classes.my_post__btn}>Send</button>
             </div>
-            <Post/>
-            <Post/>
+            <Post message='hi'/>
+            <Post message='good'/>
         </div>
         
     )
