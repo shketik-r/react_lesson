@@ -1,4 +1,7 @@
-import classes from './css_components/Profile.module.css';
+import classes from './Profile.module.css';
+import MyPosts from './MyPosts/MyPosts'
+
+
 
 function Profile(){
     return(
@@ -16,6 +19,7 @@ function Profile(){
               </ul>
             </div>
           </div>
+        <MyPosts/>
         
        
        </section>

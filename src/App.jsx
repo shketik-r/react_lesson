@@ -1,7 +1,7 @@
 import './App.css';
-import Profile from './components/Profile';
-import Header from './components/Header';
-import Sandbar from './components/Sandbar';
+import Profile from './components/Profile/Profile';
+import Header from './components/Header/Header';
+import Sandbar from './components/Sandbar/Sandbar';
 
 
 function App() {
