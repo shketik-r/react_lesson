@@ -7,7 +7,7 @@ import Sandbar from './components/Sandbar';
 function App() {
   return (
     <div className='app-wrapper'>
-    < Header />
+    <Header />
     <Sandbar />
     <Profile/>
   </div>

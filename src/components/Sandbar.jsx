@@ -1,6 +1,8 @@
+import classes from './css_components/Sandbar.module.css';
+
 function Sandbar(){
     return(
-        <nav className='nav'>
+        <nav className={classes.nav}>
         <ul>
           <li><a href='#'>Profile</a></li>
           <li><a href='#'>Messages</a></li>
