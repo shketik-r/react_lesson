@@ -1,0 +1,13 @@
+.post {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: rgb(238, 216, 18);
+    margin-right: 20px;
+}

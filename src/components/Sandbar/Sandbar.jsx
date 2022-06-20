@@ -1,4 +1,4 @@
-import classes from './css_components/Sandbar.module.css';
+import classes from './Sandbar.module.css';
 
 function Sandbar(){
     return(
