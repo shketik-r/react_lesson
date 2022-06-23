@@ -14,8 +14,15 @@ function Sandbar() {
         }>Messages</NavLink>
         </li>
 
-        <li><a href='#'>News</a></li>
-        <li><a href='#'>Music</a></li>
+        <li className={classes.li}><NavLink to='/news' className={({ isActive }) =>
+          isActive ? classes.active : classes.a
+        }>News</NavLink>
+        </li>
+        <li className={classes.li}><NavLink to='/music' className={({ isActive }) =>
+          isActive ? classes.active : classes.a
+        }>Music</NavLink>
+        </li>
+
       </ul>
     </nav>
   )
