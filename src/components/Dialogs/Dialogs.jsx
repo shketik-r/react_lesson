@@ -3,9 +3,9 @@ import classes from './Dialogs.module.css';
 
 function Dialogs(props) {
     return (
-        <section>
-
-        </section>
+        <div>
+            Dialogs
+        </div>
     )
 }
 export default Dialogs

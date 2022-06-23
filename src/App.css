@@ -2,6 +2,14 @@ body {
     background: rgb(231 215 255);
 }
 
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
 .app-wrapper {
     width: 900px;
     margin: 0 auto;
@@ -11,4 +19,10 @@ body {
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
+}
+
+.app_wrapper_content{
+grid-area: section;
+background: rgb(252, 245, 209);
+border-radius: 10px;
 }

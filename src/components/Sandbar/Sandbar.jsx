@@ -1,17 +1,23 @@
 import classes from './Sandbar.module.css';
+import { NavLink } from "react-router-dom";
+function Sandbar() {
+  return (
+    <nav className={classes.nav}>
+      <ul className={classes.ul}>
+        <li className={classes.li}><NavLink to='/profile' className={({ isActive }) =>
+          isActive ? classes.active : classes.a
+        }>Profile</NavLink>
+        </li>
 
-function Sandbar(){
-    return(
-        <nav className={classes.nav}>
-        <ul>
-          <li><a href='#'>Profile</a></li>
-          <li><a href='#'>Messages</a></li>
-          <li><a href='#'>News</a></li>
-          <li><a href='#'>Music</a></li>
-          <li><a href='#'>Settings</a></li>
-          <li><a href='#'>Frends</a></li>
-        </ul>
-      </nav>
-    )
+        <li className={classes.li}><NavLink to='/dialogs' className={({ isActive }) =>
+          isActive ? classes.active : classes.a
+        }>Messages</NavLink>
+        </li>
+
+        <li><a href='#'>News</a></li>
+        <li><a href='#'>Music</a></li>
+      </ul>
+    </nav>
+  )
 }
 export default Sandbar

@@ -1,17 +1,30 @@
-li {
-    list-style-type: none;
-    /* Убираем маркеры */
+.li{
+    margin: 5px 10px;
+    background: rgb(252, 245, 209);
+    border: 3px solid rgb(64 86 114);
+    border-radius: 10px;
+    text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: #000;
+.ul{
+    padding: 0;
+    
 }
 
+.a{
+    color: rgb(64 86 114);
+    font-size: 20px;
+}
 .nav {
     grid-area: nav;
     background: rgb(239 119 0);
     border-radius: 10px;
     box-shadow: 1px 5px 10px 0px;
     min-height: 540px;
+}
+
+.active{
+    font-weight: bold;
+    font-size: 20px;
+
 }
