@@ -1,0 +1,21 @@
+.title{
+
+}
+.dialogs{
+display: flex;
+justify-content: space-around;
+}
+
+.dialogs_user{
+display: flex;
+flex-direction: column;
+}
+
+.dialogs_user_name{
+    
+}
+
+.dialogs_item{
+
+}
+

@@ -4,7 +4,7 @@ function Sandbar() {
   return (
     <nav className={classes.nav}>
       <ul className={classes.ul}>
-        <li className={classes.li}><NavLink to='/profile' className={({ isActive }) =>
+        <li className={classes.li}><NavLink to='/' className={({ isActive }) =>
           isActive ? classes.active : classes.a
         }>Profile</NavLink>
         </li>
