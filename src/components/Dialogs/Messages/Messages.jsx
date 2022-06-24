@@ -6,12 +6,14 @@ let messagesData = [
     { mess: "Lorem, ipsum dolor", id: "2", name: "Vika" },
 ]
 
+let messageElement = messagesData
+    .map(message => <NewMessage messageText={message.mess} messageName={message.name} />)
+
 
 function Messages(props) {
     return (
         <div>
-            <NewMessage messageText={messagesData[0].mess} messageName={messagesData[0].name} />
-            <NewMessage messageText={messagesData[1].mess} messageName={messagesData[1].name} />
+            {messageElement}
         </div>
     )
 }
