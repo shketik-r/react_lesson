@@ -4,14 +4,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let usersData = [
+  { name : "Vika" , id: "1"},
+  { name : "Bob" , id: "2"}
+]
+
+let messagesData = [
+  { mess: "Lorem, ipsum dolor sit amet consectetur", id: "1", name: "Ivan" },
+  { mess: "Lorem, ipsum dolor", id: "2", name: "Vika" },
+]
+
+let postData = [
+  {message: 'hi'}, {message: 'good'}, {message: 'traktor'} , {message: 'traktor'}
+]
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App usersData = {usersData}  messagesData={messagesData}  postData={postData}/>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
+
+

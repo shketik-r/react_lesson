@@ -3,7 +3,7 @@ import MyPosts from './MyPosts/MyPosts'
 
 
 
-function Profile() {
+function Profile(props) {
   return (
     <div>
       <div className={classes.section_fon}>
@@ -19,7 +19,7 @@ function Profile() {
           </ul>
         </div>
       </div>
-      <MyPosts />
+      <MyPosts postData={props.postData} />
     </div>
   )
 }
