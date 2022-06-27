@@ -5,7 +5,9 @@ import User from './Users/Users';
 
 
 function Dialogs(props) {
+
         let userElement = props.usersData.map(user => <User name={user.name} id={user.id} />)
+        
     return (
         <div>
             <h3 className={classes.title}>Dialogs</h3>
