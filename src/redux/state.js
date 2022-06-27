@@ -1,3 +1,4 @@
+import { renderDom } from "../render"
 
 let state = {
 
@@ -19,12 +20,22 @@ let state = {
     profilePage: {
         postData: [
             { message: 'hi' },
-            { message: 'good' },
-            { message: 'traktor' },
-            { message: 'traktor' },
         ]
     }
 
 }
+
+
+export function addPost(postMessage){
+
+let newPost = {
+    message:postMessage,
+}
+
+state.profilePage.postData.push(newPost)
+renderDom(state)
+}
+
+
 
 export default state

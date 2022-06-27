@@ -1,26 +1,31 @@
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
+import React from 'react';
 
 
 
+function MyPosts(props) {
 
-function MyPosts(props){
-    
-    let postData = props.postData.map(post => <Post postData={post.message}/> )
-  
-    
-    
-    return(
+    let postData = props.postData.map(post => <Post postData={post.message} />)
+    let newPostElement = React.createRef();
+
+    function addPost () {
+
+        let text = newPostElement.current.value;
+        props.addPost(text)
+    }
+
+    return (
         <div className={classes.my_post}>
             <div>
                 <h3>MY POST</h3>
-                <textarea name="" id="" cols="88" rows="3"></textarea>
-                <button className={classes.my_post__btn}>Send</button>
+                <textarea cols="88" rows="3" ref={newPostElement}></textarea>
+                <button className={classes.my_post__btn} onClick={addPost}>Send</button>
             </div>
             {postData}
-            
+
         </div>
-        
+
     )
 }
 export default MyPosts

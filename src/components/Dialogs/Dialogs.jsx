@@ -6,8 +6,8 @@ import User from './Users/Users';
 
 function Dialogs(props) {
 
-        let userElement = props.usersData.map(user => <User name={user.name} id={user.id} />)
-        
+    let userElement = props.usersData.map(user => <User name={user.name} id={user.id} />)
+
     return (
         <div>
             <h3 className={classes.title}>Dialogs</h3>
@@ -16,6 +16,10 @@ function Dialogs(props) {
                     {userElement}
                 </ul>
                 <Messages messagesData={props.messagesData} />
+            </div>
+            <div className={classes.my_message}>
+                <textarea name="" id="" cols="90" rows="4"></textarea>
+                <button className={classes.my_message__btn}>Send</button>
             </div>
         </div>
     )

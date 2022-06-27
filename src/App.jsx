@@ -23,7 +23,8 @@ function App(props) {
         <section className='app_wrapper_content'>
           <Routes>
             <Route path="/" element={<Profile
-              postData={props.state.profilePage.postData} />}
+              postData={props.state.profilePage.postData}
+              addPost={props.addPost} />}
             />
             <Route path="/dialogs/*" element={<Dialogs
               usersData={props.state.dialogsPage.usersData}

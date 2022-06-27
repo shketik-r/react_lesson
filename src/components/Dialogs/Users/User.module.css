@@ -1,5 +1,6 @@
 .user_name {
     margin-bottom: 10px;
+    width: 150px;
 }
 
 .user_name a {
@@ -8,4 +9,13 @@
 
 .user_name img {
     width: 30px;
+}
+
+
+.active{
+    color: rgb(64 86 114);
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 10px;
+
 }

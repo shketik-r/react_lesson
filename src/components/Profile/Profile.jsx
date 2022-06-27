@@ -19,7 +19,10 @@ function Profile(props) {
           </ul>
         </div>
       </div>
-      <MyPosts postData={props.postData} />
+      <MyPosts 
+      postData={props.postData}
+      addPost = {props.addPost}
+      />
     </div>
   )
 }

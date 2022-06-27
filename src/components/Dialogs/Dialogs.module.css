@@ -19,4 +19,21 @@ flex-direction: column;
 .dialogs_item{
 
 }
-
+.my_message{
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.my_message__btn{
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    width: 60px;
+    height: 25px;
+    background: rgb(64 86 114);
+    color: #fff;
+    position: relative;
+    left: 87%;
+    top: 21px;
+}
