@@ -1,3 +1,11 @@
+.user_name {
+    margin-bottom: 10px;
+}
+
 .user_name a {
-    color: rgb(227, 243, 9);
+    color: rgb(64 86 114);
+}
+
+.user_name img {
+    width: 30px;
 }

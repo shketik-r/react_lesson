@@ -5,7 +5,7 @@ function NewMessage(props) {
     return (
         <div className={classes.wrapper_item}>
             <div className={classes.user}>
-                <div className={classes.user_icon}></div>
+            <img  src={window.location.origin + '/pngwing.png'}  alt="userFoto" />
                 <span className={classes.user_name} >{props.messageName}</span>
             </div>
             <div className={classes.messages}>

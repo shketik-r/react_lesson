@@ -16,10 +16,8 @@ function Dialogs(props) {
                     {userElement}
                 </ul>
                 <Messages messagesData={props.messagesData} />
-
             </div>
         </div>
-
     )
 }
 export default Dialogs

@@ -4,7 +4,7 @@ function Post(props){
     
     return(
         <div className={classes.post}>
-         <div className={classes.avatar}></div>
+        <img  src={window.location.origin + '/pngwing.png'}  alt="userFoto" />
          <span>{props.postData}</span>
         </div>
         
