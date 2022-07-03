@@ -5,6 +5,7 @@ import User from './Users/Users';
 import React from 'react';
 
 function Dialogs(props) {
+    
     let userElement = props.usersData.map(user => <User name={user.name} id={user.id} />)
     let newMessElement = React.createRef();
 
