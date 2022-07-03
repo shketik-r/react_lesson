@@ -1,77 +1,82 @@
-
-function renderDom  () {
-console.log("hi")
-}
-
-
-
-let state = {
-
-    dialogsPage: {
-        usersData: [
-            { name: "Vika", id: "1" },
-            { name: "Bob", id: "2" },
-            { name: "Ivan", id: "3" },
-            { name: "Jime", id: "4" },
-            { name: "Gigi", id: "5" },
-            { name: "Sveta", id: "6" },
-        ],
-        messagesData: [
-            { mess: "Lorem, ipsum dolor sit amet consectetur", id: "1", name: "Bob" },
-            { mess: "Lorem, ipsum dolor", id: "2", name: "Vika" },
-        ],
-        newTextMessages: ""
+let store = {
+    renderDom() {
+        console.log("hi")
     },
 
-    profilePage: {
-        postData: [
-            { message: 'hi' },
-        ],
-        newPostTextData: ""
+    _state: {
+
+        dialogsPage: {
+            usersData: [
+                { name: "Vika", id: "1" },
+                { name: "Bob", id: "2" },
+                { name: "Ivan", id: "3" },
+                { name: "Jime", id: "4" },
+                { name: "Gigi", id: "5" },
+                { name: "Sveta", id: "6" },
+            ],
+            messagesData: [
+                { mess: "Lorem, ipsum dolor sit amet consectetur", id: "1", name: "Bob" },
+                { mess: "Lorem, ipsum dolor", id: "2", name: "Vika" },
+            ],
+            newTextMessages: ""
+        },
+
+        profilePage: {
+            postData: [
+                { message: 'hi' },
+            ],
+            newPostTextData: ""
 
 
+        }
+
+    },
+    getState(){
+        return this._state
+    },
+    /*--------------Post----------------------------- */
+
+    addPost() {
+        let newPost = {
+            message: this._state.profilePage.newPostTextData,
+        }
+        this._state.profilePage.postData.push(newPost);
+
+        this._state.profilePage.newPostTextData = "";
+        this.renderDom(this._state);
+    },
+
+    updateNewText(newText) {
+        this._state.profilePage.newPostTextData = newText
+        this.renderDom(this._state)
+    },
+
+
+    /*-------------------------Messages--------------------------------------*/
+    addMessages() {
+        let newMessage = {
+            mess: this._state.dialogsPage.newTextMessages,
+            id: 1,
+            name: "Test"
+        }
+        this._state.dialogsPage.messagesData.push(newMessage);
+        this._state.dialogsPage.newTextMessages = "";
+        this.renderDom(this._state);
+    },
+
+    updateNewMessage(newTextMessage) {
+        this._state.dialogsPage.newTextMessages = newTextMessage
+        this.renderDom(this._state)
+    },
+
+
+
+    subscriber(observer) {
+        this.renderDom = observer;
     }
 
 }
-/*--------------Post----------------------------- */
-
-export function addPost() {
-    let newPost = {
-        message: state.profilePage.newPostTextData,
-    }
-    state.profilePage.postData.push(newPost);
-
-    state.profilePage.newPostTextData = "";
-    renderDom(state);
-}
-
-export function updateNewText(newText) {
-    state.profilePage.newPostTextData = newText
-    renderDom(state)
-}
 
 
-/*-------------------------Messages--------------------------------------*/
-export function addMessages() {
-    let newMessage = {
-        mess: state.dialogsPage.newTextMessages,
-        id: 1,
-        name: "Test"
-    }
-    state.dialogsPage.messagesData.push(newMessage);
-    state.dialogsPage.newTextMessages = "";
-    renderDom(state);
-}
-
-export function updateNewMessage(newTextMessage) {
-    state.dialogsPage.newTextMessages = newTextMessage
-    renderDom(state)
-}
-
-
-
-export function subscriber(observer){
-    renderDom = observer;
-}
-window.state=state
-export default state
+window.store = store
+export default store

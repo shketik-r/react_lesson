@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import FrendOfSandbar from './FrendOfSandbar/FrendOfSandbar';
 
 function Sandbar(props) {
-  
+
   let userElement = props.usersData.map(user => <FrendOfSandbar name={user.name} id={user.id} />)
   return (
     <nav className={classes.nav}>

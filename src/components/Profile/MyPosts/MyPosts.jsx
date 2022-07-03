@@ -6,6 +6,7 @@ import React from 'react';
 
 function MyPosts(props) {
 
+  
     let postData = props.postData.map(post => <Post postData={post.message} />)
     let newPostElement = React.createRef();
 
