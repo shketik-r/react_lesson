@@ -18,7 +18,7 @@ function App(props) {
     <div className='app-wrapper'>
       <Header />
       <Sandbar
-        usersData={props.store.getState().dialogsPage.usersData}
+        usersData={props.store.getState().sandBarPage.frends}
       />
       <section className='app_wrapper_content'>
         <Routes>
