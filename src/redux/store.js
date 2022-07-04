@@ -1,6 +1,6 @@
-import profailReducer from "./profile_reducer";
-import dialogsReducer from "./dialogs_reducer";
-import sandbarReducer from "./sandbar_reducer";
+// import profailReducer from "./profile_reducer";
+// import dialogsReducer from "./dialogs_reducer";
+// import sandbarReducer from "./sandbar_reducer";
 
 
 

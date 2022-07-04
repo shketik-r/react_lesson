@@ -2,21 +2,20 @@ import classes from './MyPosts.module.css';
 import Post from './Post/Post';
 import React from 'react';
 
-import {addPostAction, addNewTextAction } from "./../../../redux/profile_reducer"
 
 function MyPosts(props) {
 
-    
+  
     let postData = props.postData.map(post => <Post postData={post.message} />)
-    // let newPostElement = React.createRef();
 
     function addPost() {
-        props.dispatch(addPostAction())
+        props.addPost()
     }
 
     function addNewText(event) {
         let newTextPost = event.target.value;
-        props.dispatch(addNewTextAction(newTextPost))
+        props.updateNewPostText(newTextPost)
+       
     }
 
     return (

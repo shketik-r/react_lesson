@@ -2,10 +2,17 @@ const ADD_POST = "ADD-POST"
 const UPDATE_NEW_TEXT_POST = "UPDATE-NEW-TEXT-POST"
 
 
+let initialState  ={
+    postData: [
+        { message: 'hi' },
+    ],
+    newPostTextData: ""
 
 
+}
 
-function profailReducer(state, action) {
+
+function profailReducer(state = initialState, action) {
 
     switch (action.type) {
         case ADD_POST:

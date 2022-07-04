@@ -1,9 +1,12 @@
 import classes from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts'
+// import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPosts_Container';
 
 
 
 function Profile(props) {
+  
+
   return (
     <div>
       <div className={classes.section_fon}>
@@ -19,10 +22,8 @@ function Profile(props) {
           </ul>
         </div>
       </div>
-      <MyPosts 
-      postData={props.postData}
-      newPostTextData={props.newPostTextData}
-      dispatch = {props.dispatch}
+      <MyPostsContainer 
+       store={props.store}
       />
     </div>
   )

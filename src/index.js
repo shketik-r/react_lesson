@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/state"
+import store from "./redux/redux_store"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -9,7 +9,9 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function renderDom() {
+function renderDom(state) {
+  
+
   root.render(<BrowserRouter>
     <React.StrictMode>
       <App
@@ -21,9 +23,17 @@ function renderDom() {
   );
 }
 
-renderDom()
+renderDom(store.getState())
 
-store.subscriber(renderDom)
+store.subscribe(()=>{
+let state = store.getState()
+
+  renderDom(state);
+})
+
+
+
+
 
 
 reportWebVitals();

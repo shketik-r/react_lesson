@@ -4,24 +4,29 @@ import Messages from './Messages/Messages';
 import User from './Users/Users';
 import React from 'react';
 
-import {addMessAction, addNewTextMessAction} from "./../../redux/dialogs_reducer"
+
 
 
 
 function Dialogs(props) {
 
     let userElement = props.usersData.map(user => <User name={user.name} id={user.id} />)
-   
+ 
 
     function addMess() {
-        props.dispatch(addMessAction())
+     
+        props.addMess()
+       
     }
-
+   
     function addNewTextMess(event) {
-        let newTextMessage = event.target.value;
-        props.dispatch(addNewTextMessAction(newTextMessage))
+   
+        let newTextMess = event.target.value;
+       
+        props.updateNewMessText(newTextMess)
+       
     }
-    
+   
     return (
         <div className={classes.wrapper_dialog}>
             <h3 className={classes.title}>Dialogs</h3>
