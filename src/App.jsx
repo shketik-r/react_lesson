@@ -9,6 +9,8 @@ import Footer from './components/Footer/Footer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Frends from './components/Frends/Frends';
+import DialogsContainer from './components/Dialogs/Dialogs_Container';
+import SandbarContainer from './components/Sandbar/Sandbar_Container';
 
 
 
@@ -17,25 +19,21 @@ function App(props) {
   return (
     <div className='app-wrapper'>
       <Header />
-      <Sandbar
-        usersData={props.store.getState().sandBarPage.frends}
+      <SandbarContainer
+        store={props.store}
       />
       <section className='app_wrapper_content'>
         <Routes>
           <Route path="/" element={
             <Profile
-              postData={props.store.getState().profilePage.postData}
-              newPostTextData={props.store.getState().profilePage.newPostTextData}
-              dispatch={props.dispatch}
+              store={props.store}
             />}
 
           />
           <Route path="/dialogs/*" element={
-            <Dialogs
-              usersData={props.store.getState().dialogsPage.usersData}
-              messagesData={props.store.getState().dialogsPage.messagesData}
-              newTextMessages={props.store.getState().dialogsPage.newTextMessages}
-              dispatch={props.dispatch}
+            <DialogsContainer
+              store={props.store}
+             
             />}
 
           />
