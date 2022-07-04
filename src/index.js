@@ -14,10 +14,7 @@ function renderDom() {
     <React.StrictMode>
       <App
         store={store}
-        updateNewText={store.updateNewText.bind(store)}
-        addPost={store.addPost.bind(store)}
-        addMessages={store.addMessages.bind(store)}
-        updateNewMessage={store.updateNewMessage.bind(store)}
+        dispatch={store.dispatch.bind(store)}
       />
     </React.StrictMode>
   </BrowserRouter>
