@@ -26,18 +26,16 @@ function App(props) {
             <Profile
               postData={props.store.getState().profilePage.postData}
               newPostTextData={props.store.getState().profilePage.newPostTextData}
-              updateNewText={props.updateNewText}
-              addPost={props.addPost}
+              dispatch={props.dispatch}
             />}
-  
+
           />
           <Route path="/dialogs/*" element={
             <Dialogs
               usersData={props.store.getState().dialogsPage.usersData}
               messagesData={props.store.getState().dialogsPage.messagesData}
-              addMessages={props.addMessages}
-              updateNewMessage={props.updateNewMessage}
               newTextMessages={props.store.getState().dialogsPage.newTextMessages}
+              dispatch={props.dispatch}
             />}
 
           />
