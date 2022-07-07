@@ -10,6 +10,8 @@ import Frends from './components/Frends/Frends';
 
 import DialogsContainer from './components/Dialogs/Dialogs_Container';
 import SandbarContainer from './components/Sandbar/Sandbar_Container';
+import FindUsersContainer from './components/FindUsers/FindUsers_Container';
+
 
 
 
@@ -22,17 +24,12 @@ function App(props) {
       <section className='app_wrapper_content'>
         <Routes>
 
-          <Route path="/" element={
-            <Profile />}
-          />
-
-          <Route path="/dialogs/*" element={
-            <DialogsContainer />}
-          />
-
+          <Route path="/" element={<Profile />} />
+          <Route path="/dialogs/*" element={<DialogsContainer />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/frends" element={<Frends />} />
+          <Route path="/users" element={<FindUsersContainer />} />
 
         </Routes>
       </section>

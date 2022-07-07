@@ -1,10 +1,8 @@
-
-
 .wrapper_item {
     display: flex;
-    
+
     justify-content: space-between;
-    margin: 10px 10px 20px 10px ;
+    margin: 10px 10px 20px 10px;
 }
 
 .user {
@@ -21,13 +19,14 @@
 .user_name {}
 
 .messages {
-width: 320px;
-background: #fff;
-border-radius: 20px;
-margin-left: 30px;
+    width: 320px;
+    background: #fff;
+    border-radius: 20px;
+    margin-left: 30px;
     border: black;
     padding: 5px;
     align-items: center;
+    box-shadow: 2px 4px 10px 0px;
 }
 
 .messages_text {}

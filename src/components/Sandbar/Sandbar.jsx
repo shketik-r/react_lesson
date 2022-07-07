@@ -20,19 +20,25 @@ function Sandbar(props) {
         }>Messages</NavLink>
         </li>
 
-        <li className={classes.li}><NavLink to='/news' className={({ isActive }) =>
+        {/* <li className={classes.li}><NavLink to='/news' className={({ isActive }) =>
           isActive ? classes.active : classes.a
         }>News</NavLink>
         </li>
         <li className={classes.li}><NavLink to='/music' className={({ isActive }) =>
           isActive ? classes.active : classes.a
         }>Music</NavLink>
+        </li> */}
+
+        <li className={classes.li}><NavLink to='/users' className={({ isActive }) =>
+          isActive ? classes.active : classes.a
+        }>Find Users</NavLink>
         </li>
 
         <li className={classes.li}><NavLink to='/frends' className={({ isActive }) =>
           isActive ? classes.active : classes.a
         }>Frends</NavLink>
         </li>
+       
       </ul>
       <div className={classes.frend_wrapper}>
       {userElement}

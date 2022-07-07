@@ -22,7 +22,7 @@ let initialState = {
 }
 
 
-function dialogsReducer(state = initialState, action) {
+function usersReducer(state = initialState, action) {
 
     let stateCopy;
 
@@ -78,4 +78,4 @@ export function addNewTextMessAction(newTextMessage) {
 }
 
 
-export default dialogsReducer;
+export default usersReducer;
