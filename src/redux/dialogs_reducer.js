@@ -2,7 +2,7 @@
 const ADD_MESSAGES = "ADD-MESSAGES"
 const UPDATE_NEW_TEXT_MESSAGE = "UPDATE-NEW-TEXT-MESSAGE"
 
-let initialState  = {
+let initialState = {
     usersData: [
         { name: "Vika", id: "1" },
         { name: "Bob", id: "2" },
@@ -12,8 +12,11 @@ let initialState  = {
         { name: "Sveta", id: "6" },
     ],
     messagesData: [
-        { mess: "Lorem, ipsum dolor sit amet consectetur", id: "1", name: "Bob" },
-        { mess: "Lorem, ipsum dolor", id: "2", name: "Vika" },
+        {
+            mess: "Lorem, ipsum dolor sit amet consectetur",
+            id: "1",
+            name: "Bob",
+        },
     ],
     newTextMessages: ""
 }
@@ -21,25 +24,42 @@ let initialState  = {
 
 function dialogsReducer(state = initialState, action) {
 
-switch (action.type) {
-    case ADD_MESSAGES:
-        let newMessage = {
-            mess: state.newTextMessages,
-            id: 1,
-            name: "Test"
-        }
-        state.messagesData.push(newMessage);
-        state.newTextMessages = "";
-        return state;
+    let stateCopy;
 
-    case UPDATE_NEW_TEXT_MESSAGE:
-            state.newTextMessages = action.newTextMessage
+    switch (action.type) {
+        case ADD_MESSAGES:
 
+            let newMessage = {
+                mess: state.newTextMessages,
+                id: 1,
+                name: "Test"
+            }
+
+            stateCopy = {
+                ...state,
+                messagesData: [...state.messagesData],
+                newTextMessages: "",
+            };
+
+
+            stateCopy.messagesData.push(newMessage);
+
+            return stateCopy;
+
+
+        case UPDATE_NEW_TEXT_MESSAGE:
+
+            stateCopy = {
+                ...state,
+                newTextMessages: action.newTextMessage,
+            };
+
+            return stateCopy;
+
+
+        default:
             return state;
-
-    default:
-        return state;
-}
+    }
 
 }
 

@@ -10,7 +10,7 @@ import React from 'react';
 
 function Dialogs(props) {
 
-    let userElement = props.usersData.map(user => <User name={user.name} id={user.id} />)
+    let userElement = props.usersData.map(user => <User name={user.name} id={user.id} key ={user.id} />)
  
 
     function addMess() {

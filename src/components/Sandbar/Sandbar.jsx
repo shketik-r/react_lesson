@@ -5,7 +5,7 @@ import FrendOfSandbar from './FrendOfSandbar/FrendOfSandbar';
 function Sandbar(props) {
   
 
-  let userElement = props.frends.map(user => <FrendOfSandbar name={user.name} id={user.id} />)
+  let userElement = props.frends.map(user => <FrendOfSandbar key={user.id} name={user.name} id={user.id} />)
 
   return (
     <nav className={classes.nav}>

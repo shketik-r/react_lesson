@@ -6,7 +6,7 @@ import React from 'react';
 function MyPosts(props) {
 
   
-    let postData = props.postData.map(post => <Post postData={post.message} />)
+    let postData = props.postData.map(post => <Post   postData={post.message} key={post.id} />)
 
     function addPost() {
         props.addPost()
