@@ -5,7 +5,7 @@ import NewMessage from './NewMessage/NewMessage';
 function Messages(props) {
 
     let messageElement = props.messagesData
-        .map(message => <NewMessage messageText={message.mess} messageName={message.name} />)
+        .map(message => <NewMessage  messageText={message.mess} messageName={message.name} key={message.id} />)
     return (
         <div>
             {messageElement}

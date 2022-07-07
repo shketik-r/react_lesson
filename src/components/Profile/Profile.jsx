@@ -1,10 +1,9 @@
 import classes from './Profile.module.css';
-// import MyPosts from './MyPosts/MyPosts'
 import MyPostsContainer from './MyPosts/MyPosts_Container';
 
 
 
-function Profile(props) {
+function Profile() {
   
 
   return (
@@ -22,9 +21,7 @@ function Profile(props) {
           </ul>
         </div>
       </div>
-      <MyPostsContainer 
-       store={props.store}
-      />
+      <MyPostsContainer />
     </div>
   )
 }

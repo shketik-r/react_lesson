@@ -1,15 +1,18 @@
+import { connect } from 'react-redux';
 
 import Sandbar from './Sandbar';
 
 
-function SandbarContainer(props) {
-  let state = props.store.getState()
-
-  return (<Sandbar
-  frends={state.sandBarPage.frends}
-
-  />)
 
 
+function mapStateToProps(state) {
+  return (
+      {
+        frends: state.sandBarPage.frends,
+         
+      }
+  )
 }
+
+const SandbarContainer  = connect( mapStateToProps)(Sandbar)
 export default SandbarContainer
