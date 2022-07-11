@@ -10,23 +10,25 @@ import React from 'react';
 
 function Dialogs(props) {
 
-    let userElement = props.usersData.map(user => <User name={user.name} id={user.id} key ={user.id} />)
- 
+    let userElement = props.usersData.map(user => <User
+        name={user.name}
+        id={user.id}
+        key={user.id}
+    />)
+
 
     function addMess() {
-     
         props.addMess()
-       
     }
-   
+
     function addNewTextMess(event) {
-   
+
         let newTextMess = event.target.value;
-       
+
         props.updateNewMessText(newTextMess)
-       
+
     }
-   
+
     return (
         <div className={classes.wrapper_dialog}>
             <h3 className={classes.title}>Dialogs</h3>

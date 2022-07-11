@@ -1,15 +1,18 @@
-import { NavLink } from 'react-router-dom';
 import classes from './Users.module.css';
 
 
 
 function Users(props) {
+//  debugger
     return (
 
         <li className={classes.user}>
             <div className={classes.users_icon}>
                 <img className={classes.users_icon_img} src={window.location.origin + '/images/pngwing.png'} alt="userFoto" />
-                <button className={classes.users_icon_btn}>button</button>
+                {props.followed ?
+                    <button onClick={() => { props.follow(props.id) }} className={classes.users_icon_btn}>Folowed</button>
+                    : <button onClick={() => { props.unFollow(props.id) }} className={classes.users_icon_btn}>Unfolowed</button>}
+
             </div>
             <div className={classes.users_data}>
                 <div className={classes.users_data_name}>
@@ -17,8 +20,8 @@ function Users(props) {
                     <div>{props.status}</div>
                 </div>
                 <div >
-                <div>{props.city},{props.country}</div>
-                
+                    <div>{props.city},{props.country}</div>
+
                 </div>
 
             </div>
@@ -26,6 +29,6 @@ function Users(props) {
 
 
     )
+   
 }
-
 export default Users

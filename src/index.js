@@ -15,12 +15,12 @@ function renderDom(state) {
 
   root.render(
     <BrowserRouter>
-      <React.StrictMode>
+      {/* <React.StrictMode> */}
         <Provider store={store}>
           <App/>
         </Provider>
 
-      </React.StrictMode>
+      {/* </React.StrictMode> */}
     </BrowserRouter>
   );
 }

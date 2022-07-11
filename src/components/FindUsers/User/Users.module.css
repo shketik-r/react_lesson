@@ -26,7 +26,12 @@ margin: 15px 0;
 }
 
 .users_icon_btn{
-    width: 50px;
+    width: 77px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(64 86 114);
+    color: #fff;
+    cursor: pointer;
 
 }
 

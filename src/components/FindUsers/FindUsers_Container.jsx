@@ -1,5 +1,5 @@
 
-import { followAC, unFollowAC, setUsersAC } from "../../redux/find-users_reducer"
+import { followAC, unfollowAC, setUsersAC } from "../../redux/find-users_reducer"
 import FindUsers from './FindUsers';
 import { connect } from 'react-redux';
 
@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch) {
             dispatch(followAC(usersId))
         },
         unFollow: (usersId) => {
-            dispatch(unFollowAC(usersId))
+            dispatch(unfollowAC(usersId))
         },
         setUsers: (users)=>{
             dispatch(setUsersAC(users))
