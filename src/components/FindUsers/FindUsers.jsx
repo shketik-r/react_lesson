@@ -1,4 +1,5 @@
 
+import * as axios from 'axios';
 import classes from './FindUsers.module.css';
 import Users from './User/User';
 
@@ -6,46 +7,22 @@ import Users from './User/User';
 
 
 function FindUsers(props) {
+
+    function getUsers(){
+        if (props.users.length === 0) {
+
+            axios.get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(res => {
     
-    if (props.users.length === 0) {
-        props.setUsers([
-            {
-                id: "1",
-                followed: true,
-                name: "Bob",
-                status: "junior",
-                location: {
-                    city: "Minsk",
-                    country: "Belarus"
-                },
-            },
-
-            {
-                id: "2",
-                followed: true,
-                name: "Gigi",
-                status: "junior",
-                location: {
-                    city: "Minsk",
-                    country: "Belarus"
-                },
-            },
-
-            {
-                id: "3",
-                name: "Liza",
-                followed: false,
-                status: "junior",
-                location: {
-                    city: "Minsk",
-                    country: "Belarus"
-                },
-            },
-        ]
-        )
+                    props.setUsers(res.data.items)
+                })
+    
+    
+        }
     }
-
     
+    getUsers()
+
 
     let userElement = props.users.map((user) =>
         <Users
@@ -53,8 +30,9 @@ function FindUsers(props) {
             name={user.name}
             id={user.id}
             status={user.status}
-            city={user.location.city}
-            country={user.location.country}
+            photos = {user.photos}
+            // city={user.location.city}
+            // country={user.location.country}
             followed={user.followed}
             follow={props.follow}
             unFollow={props.unFollow}

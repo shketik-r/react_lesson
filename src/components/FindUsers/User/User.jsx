@@ -1,14 +1,14 @@
 import classes from './Users.module.css';
-
+import userFoto from "../../../images/pngwing.png"
 
 
 function Users(props) {
-//  debugger
+
     return (
 
         <li className={classes.user}>
             <div className={classes.users_icon}>
-                <img className={classes.users_icon_img} src={window.location.origin + '/images/pngwing.png'} alt="userFoto" />
+                <img className={classes.users_icon_img} src={props.photos.small ?  props.photos.small : userFoto} alt="userFoto" />
                 {props.followed ?
                     <button onClick={() => { props.follow(props.id) }} className={classes.users_icon_btn}>Folowed</button>
                     : <button onClick={() => { props.unFollow(props.id) }} className={classes.users_icon_btn}>Unfolowed</button>}
@@ -20,7 +20,7 @@ function Users(props) {
                     <div>{props.status}</div>
                 </div>
                 <div >
-                    <div>{props.city},{props.country}</div>
+                    {/* <div>{props.city},{props.country}</div> */}
 
                 </div>
 
