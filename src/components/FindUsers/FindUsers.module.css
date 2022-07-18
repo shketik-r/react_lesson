@@ -1,13 +1,55 @@
 .users{
    width: 90%;
    margin: 0 auto;
+   text-align: center;
 }
 
 .users_wrapper{
+    margin-bottom: 30px;
+ 
 
 }
 
 .show_more{
-    width: 100px;
-    
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    width: 60px;
+    height: 25px;
+    background: rgb(64 86 114);
+    color: #fff;
+    width: 100px; 
+    margin: 0 auto;   
+    margin-bottom: 30px;
+}
+
+.selector_wrapper{
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    overflow-x: scroll; /* Добавляем полосу прокрутки */
+    width: 300px; /* Ширина блока */
+    height: 60px; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+}
+.selectorOff{
+    font-size: 20px;
+    color: white;
+    margin-right: 15px;
+    cursor: pointer;
+    background: rgb(64 86 114);
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.selectorOn{
+    font-size: 20px;
+    color: white;
+    margin-right: 15px;
+    cursor: pointer;
+    background: rgb(239 119 0);
+    padding: 5px;
+    border-radius: 5px;
+
 }

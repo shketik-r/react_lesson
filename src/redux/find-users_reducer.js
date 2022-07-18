@@ -1,28 +1,33 @@
 
-const FOLLOW = "FOLLOW"
-const UNFOLLOW = "UNFOLLOW"
-const SET_USERS = "SET-USERS"
+const FOLLOW = "FOLLOW";
+const UNFOLLOW = "UNFOLLOW";
+const SET_USERS = "SET-USERS";
+const SET_CURRENT_PAGE = "SET-CURRENT-PAGE"
+const SET_USER_COUNT = "SET-USER-COUNT"
 
 
 let initialState = {
-    users:[]
+    users: [],
+    totalUsersCount: 0,
+    pageSize: 3,
+    currentPage: 1,
 
 }
 
 
 function findUsersReducer(state = initialState, action) {
-    
-     switch (action.type) {
+
+    switch (action.type) {
 
         case FOLLOW:
-           return {
+            return {
                 ...state,
                 users: state.users.map(user => {
                     if (user.id === action.userId) {
                         return { ...user, followed: false }
                     }
                     return user
-                    
+
                 })
             }
 
@@ -37,7 +42,13 @@ function findUsersReducer(state = initialState, action) {
                 })
             }
         case SET_USERS:
-            return { ...state, users:[...state.users,  ...action.users] }
+            return { ...state, users: action.users }
+
+        case SET_CURRENT_PAGE:
+            return { ...state, currentPage: action.currentPage }
+
+        case SET_USER_COUNT:
+            return { ...state, totalUsersCount: action.totalUsersCount }
 
         default:
             return state;
@@ -47,7 +58,7 @@ function findUsersReducer(state = initialState, action) {
 
 
 export function followAC(userId) {
-    
+
     return {
         type: FOLLOW,
         userId,
@@ -63,11 +74,25 @@ export function unfollowAC(userId) {
 }
 
 export function setUsersAC(users) {
-    
+
     return {
         type: SET_USERS,
         users,
 
+    }
+}
+
+export function setCurrentPageAC(currentPage) {
+    return {
+        type: SET_CURRENT_PAGE,
+        currentPage,
+    }
+}
+
+export function setTotalUsersCountAC(totalUsersCount) {
+    return {
+        type: SET_USER_COUNT,
+        totalUsersCount,
     }
 }
 

@@ -24,11 +24,7 @@ function Users(props) {
                     <div className={classes.users_name}>{props.name}</div>
                     <div>{props.status}</div>
                 </div>
-                <div >
-                    {/* <div>{props.city},{props.country}</div> */}
-
-                </div>
-
+               
             </div>
         </li>
 

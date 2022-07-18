@@ -7,18 +7,16 @@ import React from 'react';
 
 class FindUsers extends React.Component {
 
-    constructor(props) {
-        super(props);
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(res => {
 
-                this.props.setUsers(res.data.items)
+                this.props.setUsers(res.data.items);
+                this.props.setTotalUsersCount(res.data.totalCount);
+
             });
-
-
     }
-
 
     userElement() {
         return (
@@ -29,8 +27,6 @@ class FindUsers extends React.Component {
                     id={user.id}
                     status={user.status}
                     photos={user.photos}
-                    // city={user.location.city}
-                    // country={user.location.country}
                     followed={user.followed}
                     follow={this.props.follow}
                     unFollow={this.props.unFollow}
@@ -39,7 +35,27 @@ class FindUsers extends React.Component {
 
     }
 
+    onPageChanged(p) {
+        this.props.setCurrentPage(p);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
+            .then(res => {
+
+                this.props.setUsers(res.data.items)
+            });
+
+    }
+
     render() {
+
+        let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        let pages = [];
+
+
+        for (let i = 1; i <= pageCount; i++) {
+            pages.push(i)
+
+        }
+        
         return (
             <div className={classes.users}>
                 <h3>Users</h3>
@@ -49,6 +65,21 @@ class FindUsers extends React.Component {
                 </ul>
 
                 <button className={classes.show_more}>Show More</button>
+
+                <div className={classes.selector_wrapper}>
+                    {pages.map(p => {
+                        return (
+                            <span className={this.props.currentPage === p ?
+                                classes.selectorOn :
+                                classes.selectorOff}
+                                onClick={() => { this.onPageChanged(p) }}
+                            >{p}</span>
+                        )
+                    })}
+
+                </div>
+
+
 
             </div>
         )
