@@ -26,8 +26,9 @@ flex-direction: column;
 .my_message{
     position: relative;
     top: 100px;
+    text-align: center;
     margin: 0 auto;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 .my_message__btn{
     cursor: pointer;
@@ -38,6 +39,6 @@ flex-direction: column;
     background: rgb(64 86 114);
     color: #fff;
     position: relative;
-    left: 87%;
+    left: 40%;
     top: 21px;
 }

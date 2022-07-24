@@ -10,7 +10,7 @@ let initialState = {
     users: [],
     totalUsersCount: 0,
     pageSize: 3,
-    currentPage: 1,
+    currentPage: 3,
 
 }
 
@@ -83,6 +83,7 @@ export function setUsersAC(users) {
 }
 
 export function setCurrentPageAC(currentPage) {
+   
     return {
         type: SET_CURRENT_PAGE,
         currentPage,

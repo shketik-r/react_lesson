@@ -39,7 +39,7 @@ function Dialogs(props) {
                 <Messages messagesData={props.messagesData} />
             </div>
             <div className={classes.my_message}>
-                <textarea name="" id="" cols="90" rows="4" onChange={addNewTextMess} value={props.newTextMessages} />
+                <textarea name="" id="" cols="85" rows="4" onChange={addNewTextMess} value={props.newTextMessages} />
                 <button className={classes.my_message__btn} onClick={addMess}>Send</button>
             </div>
         </div>
