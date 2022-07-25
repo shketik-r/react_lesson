@@ -22,10 +22,17 @@ function MyPosts(props) {
         <div className={classes.my_post}>
             <div>
                 <h3>MY POST</h3>
-                <textarea cols="84" rows="3"  onChange={addNewText} value={props.newPostTextData} />
+                <div className={classes.my_post_text}>
+                    <textarea cols="84" rows="3"  onChange={addNewText} value={props.newPostTextData} />
                 <button className={classes.my_post__btn} onClick={addPost}>Send</button>
+
+                </div>
+                
             </div>
+            <div className={classes.my_post_data}>
             {postData}
+            </div>
+            {/* {postData} */}
 
         </div>
 

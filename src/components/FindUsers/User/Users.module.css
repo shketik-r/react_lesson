@@ -39,6 +39,7 @@ margin: 15px 0;
 .users_data{
     width: 500px;
     height: 70px;
+    margin-left: 15px;
     background: #fff;
     border-radius: 20px;
     padding: 12px;

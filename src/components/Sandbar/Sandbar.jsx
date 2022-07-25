@@ -1,16 +1,16 @@
 import classes from './Sandbar.module.css';
 import { NavLink } from "react-router-dom";
-import FrendOfSandbar from './FrendOfSandbar/FrendOfSandbar';
+
 
 function Sandbar(props) {
   
 
-  let userElement = props.frends.map(user => <FrendOfSandbar key={user.id} name={user.name} id={user.id} />)
+  
 
   return (
     <nav className={classes.nav}>
       <ul className={classes.ul}>
-        <li className={classes.li}><NavLink to='/' className={({ isActive }) =>
+        <li className={classes.li}><NavLink to='/profile' className={({ isActive }) =>
           isActive ? classes.active : classes.a
         }>Profile</NavLink>
         </li>
@@ -20,15 +20,7 @@ function Sandbar(props) {
         }>Messages</NavLink>
         </li>
 
-        {/* <li className={classes.li}><NavLink to='/news' className={({ isActive }) =>
-          isActive ? classes.active : classes.a
-        }>News</NavLink>
-        </li>
-        <li className={classes.li}><NavLink to='/music' className={({ isActive }) =>
-          isActive ? classes.active : classes.a
-        }>Music</NavLink>
-        </li> */}
-
+     
         <li className={classes.li}><NavLink to='/users' className={({ isActive }) =>
           isActive ? classes.active : classes.a
         }>Find Users</NavLink>
@@ -40,10 +32,7 @@ function Sandbar(props) {
         </li>
        
       </ul>
-      <div className={classes.frend_wrapper}>
-      {userElement}
-
-  </div>
+ 
     </nav>
   )
 }

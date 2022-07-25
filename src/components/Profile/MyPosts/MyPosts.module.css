@@ -2,7 +2,27 @@
     width: 90%;
     margin: 0 auto;
     margin-bottom: 20px;
+    
 }
+
+.my_post_text{
+    display: flex;
+    width: 670px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.my_post_data{
+    overflow-y: scroll; 
+    margin-top: 30px;
+    width: 688px; /* Ширина блока */
+    height: 444px; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+ 
+}
+
+
 
 .my_post__btn {
     cursor: pointer;
@@ -12,7 +32,5 @@
     height: 25px;
     background: rgb(64 86 114);
     color: #fff;
-    position: relative;
-    left: 90%;
-    top: 14px;
+   margin-top: 15px;
 }

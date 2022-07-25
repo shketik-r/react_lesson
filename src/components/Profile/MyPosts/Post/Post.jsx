@@ -7,7 +7,7 @@ function Post(props){
     return(
         <div className={classes.post}>
         <img  src={userFoto}  alt="userFoto" />
-         <span>{props.postData}</span>
+         <span className={classes.post_text}>{props.postData}</span>
         </div>
         
     )

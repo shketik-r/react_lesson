@@ -24,7 +24,7 @@ function App(props) {
       <section className='app_wrapper_content'>
         <Routes>
 
-          <Route path="/" element={<Profile />} />
+          <Route path="/profile/*" element={<Profile />} />
           <Route path="/dialogs/*" element={<DialogsContainer />} />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />

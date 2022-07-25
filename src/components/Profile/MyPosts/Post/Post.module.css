@@ -1,15 +1,23 @@
 .post {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
+.post_text{
+    word-break: break-all;
+    width: 610px;
+    border: black;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px;
+    align-items: center;
+    box-shadow: 2px 4px 10px 0px;
+}
 
 
 .post img {
     width: 30px;
-    
-   
     
     margin-right: 20px;
 }

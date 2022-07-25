@@ -36,10 +36,13 @@ function Dialogs(props) {
                 <ul className={classes.dialogs_user}>
                     {userElement}
                 </ul>
+                <div className={classes.user_messages}>
                 <Messages messagesData={props.messagesData} />
+                </div>
+                
             </div>
             <div className={classes.my_message}>
-                <textarea name="" id="" cols="85" rows="4" onChange={addNewTextMess} value={props.newTextMessages} />
+                <textarea  className={classes.my_message_text} name="" id="" cols="85" rows="4" onChange={addNewTextMess} value={props.newTextMessages} />
                 <button className={classes.my_message__btn} onClick={addMess}>Send</button>
             </div>
         </div>

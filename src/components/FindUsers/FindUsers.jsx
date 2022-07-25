@@ -2,6 +2,7 @@
 import classes from './FindUsers.module.css';
 import Users from './User/User';
 import React from 'react';
+import Preloader from '../common/Preloader/Preloader';
 
 
 function FindUsers(props) {
@@ -17,17 +18,17 @@ function FindUsers(props) {
             photos={user.photos}
             followed={user.followed}
             follow={props.follow}
-            unFollow={props.unFollow}
+            unfollow={props.unfollow}
         />)
 
-        let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
-        let pages = [];
+    let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
 
 
-        for (let i = 1; i <= pageCount; i++) {
-            pages.push(i)
+    for (let i = 1; i <= pageCount; i++) {
+        pages.push(i)
 
-        }
+    }
 
 
 
@@ -36,7 +37,7 @@ function FindUsers(props) {
             <h3>Users</h3>
 
             <ul className={classes.users_wrapper}>
-                {userElement}
+                {props.isFetching ? <Preloader /> : userElement}
             </ul>
 
             <button className={classes.show_more}>Show More</button>
@@ -44,8 +45,8 @@ function FindUsers(props) {
             <div className={classes.selector_wrapper}>
                 {pages.map(p => {
                     return (
-                        <span className={props.currentPage === p ? classes.selectorOn : classes.selectorOff} 
-                        onClick={() => { props.onPageChanged(p)}}>{p}</span>
+                        <span className={props.currentPage === p ? classes.selectorOn : classes.selectorOff}
+                            onClick={() => { props.onPageChanged(p) }}>{p}</span>
                     )
                 })}
 
