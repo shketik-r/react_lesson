@@ -1,5 +1,6 @@
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_TEXT_POST = "UPDATE-NEW-TEXT-POST"
+const SET_USER_PROFILE = "SET-USER-PROFILE"
 
 
 let initialState = {
@@ -9,7 +10,8 @@ let initialState = {
             id: 1
         }
     ],
-    newPostTextData: ""
+    newPostTextData: "",
+    profile: null,
 
 
 }
@@ -31,29 +33,42 @@ function profailReducer(state = initialState, action) {
             stateCopy = {
                 ...state,
                 postData: [...state.postData],
-                newPostTextData : "",
+                newPostTextData: "",
             };
 
-            
+
 
             stateCopy.postData.push(newPost);
+
             return stateCopy;
 
 
         case UPDATE_NEW_TEXT_POST:
+
             stateCopy = {
                 ...state,
                 newPostTextData: action.newPostTextData,
             };
 
-            return stateCopy;
 
+        case SET_USER_PROFILE: 
+
+            stateCopy = { 
+                ...state, 
+                profile: action.profile }
+        
+
+return stateCopy
 
         default:
             return state;
     }
 
 }
+
+
+
+
 
 export function addPostAction() {
     return {
@@ -67,4 +82,10 @@ export function addNewTextAction(newTextPost) {
     }
 }
 
+export function setProfile(profile) {
+    return {
+        type: SET_USER_PROFILE,
+        profile,
+    }
+}
 export default profailReducer;

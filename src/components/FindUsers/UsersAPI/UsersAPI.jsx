@@ -10,15 +10,8 @@ class UsersAPI extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(res => {
                 this.props.setToggleIsFetching(false)
-
                 this.props.setUsers(res.data.items);
                 this.props.setTotalUsersCount(res.data.totalCount);
-
-
-                console.log(this.props)
-
-
-
             });
     }
 
