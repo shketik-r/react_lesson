@@ -9,3 +9,20 @@
     width: 60px;
     margin: 5px;
 }
+
+.login_blok{
+    float: right;
+    margin: 8px;
+}
+
+.login{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    
+    padding: 5px;
+    height: 30px;
+    text-align: center;
+}

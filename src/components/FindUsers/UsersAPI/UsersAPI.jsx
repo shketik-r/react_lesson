@@ -1,18 +1,19 @@
-
-import * as axios from 'axios';
 import React from 'react';
 import FindUsers from './../FindUsers';
+import { getUsers } from '../../../api/api'
+
 class UsersAPI extends React.Component {
 
 
     componentDidMount() {
         this.props.setToggleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(res => {
-                this.props.setToggleIsFetching(false)
-                this.props.setUsers(res.data.items);
-                this.props.setTotalUsersCount(res.data.totalCount);
-            });
+        
+
+        getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+            this.props.setToggleIsFetching(false)
+            this.props.setUsers(data.items);
+            this.props.setTotalUsersCount(data.totalCount);
+        });
     }
 
 
@@ -21,13 +22,11 @@ class UsersAPI extends React.Component {
         this.props.setCurrentPage(page)
         this.props.setToggleIsFetching(true)
 
+        getUsers(page, this.props.pageSize).then(data => {
+            this.props.setToggleIsFetching(false)
 
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`)
-            .then(res => {
-                this.props.setToggleIsFetching(false)
-
-                this.props.setUsers(res.data.items)
-            });
+            this.props.setUsers(data.items)
+        });
 
     }
 
@@ -43,6 +42,8 @@ class UsersAPI extends React.Component {
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
                 isFetching={this.props.isFetching}
+                followingProgress={this.props.followingProgress}
+                toggleFollowingProgress={this.props.toggleFollowingProgress}
             />
         )
     }

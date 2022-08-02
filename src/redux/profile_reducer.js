@@ -35,11 +35,7 @@ function profailReducer(state = initialState, action) {
                 postData: [...state.postData],
                 newPostTextData: "",
             };
-
-
-
             stateCopy.postData.push(newPost);
-
             return stateCopy;
 
 
@@ -49,17 +45,17 @@ function profailReducer(state = initialState, action) {
                 ...state,
                 newPostTextData: action.newPostTextData,
             };
+            return stateCopy;
 
 
-        case SET_USER_PROFILE: 
+        case SET_USER_PROFILE:
+            stateCopy = {
+                ...state,
+                profile: action.profile
+            }
+            return stateCopy;
 
-            stateCopy = { 
-                ...state, 
-                profile: action.profile }
-        
-
-return stateCopy
-
+            
         default:
             return state;
     }
