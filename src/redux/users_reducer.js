@@ -1,3 +1,5 @@
+import { getUsersApi, deleteFollowApi, postFollowApi } from '../api/api'
+
 
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
@@ -67,7 +69,7 @@ function findUsersReducer(state = initialState, action) {
         case TOGGLR_IS_FOLLOWING_PROGRESS:
             return {
                 ...state,
-                followingProgress: action.followingProgress ? [...state.followingProgress, action.userId] : [...state.followingProgress.filter(id => id != action.userId)]
+                followingProgress: action.followingProgress ? [...state.followingProgress, action.userId] : [...state.followingProgress.filter(id => id !== action.userId)]
             }
 
         default:
@@ -130,6 +132,57 @@ export function toggleFollowingProgress(followingProgress, userId) {
         followingProgress, userId
     }
 }
+
+
+
+
+export function getUseresThunkCreater(currentPage, pageSize) {     //Thunk
+    return (dispatch) => {
+        dispatch(setToggleIsFetching(true))
+
+        getUsersApi(currentPage, pageSize).then(data => {
+            dispatch(setToggleIsFetching(false));
+            dispatch(setUsers(data.items));
+            dispatch(setTotalUsersCount(data.totalCount));
+        });
+    }
+}
+
+
+export function deleteFollowThunkCreater(id) {      //Thunk
+    return (dispatch) => {
+
+        dispatch(toggleFollowingProgress(true, id))
+
+        deleteFollowApi(id).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(unfollow(id))
+            }
+            dispatch(toggleFollowingProgress(false, id))
+        });
+    }
+}
+
+export function postFollowThunkCreater(id) {      //Thunk
+    return (dispatch) => {
+
+        dispatch(toggleFollowingProgress(true, id))
+        postFollowApi(id).then(data => {
+
+            if (data.resultCode === 0) {
+                dispatch(follow(id))
+            }
+            dispatch(toggleFollowingProgress(false,id))
+        });
+    }
+}
+
+
+
+
+
+
+
 
 
 export default findUsersReducer;

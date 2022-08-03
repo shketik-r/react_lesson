@@ -6,9 +6,7 @@ import Preloader from '../common/Preloader/Preloader';
 
 
 function FindUsers(props) {
-    console.log('props: ', props);
     
-
     let userElement = props.users.map((user) =>
         <Users
             key={user.id}
@@ -17,10 +15,10 @@ function FindUsers(props) {
             status={user.status}
             photos={user.photos}
             followed={user.followed}
-            follow={props.follow}
-            unfollow={props.unfollow}
             followingProgress={props.followingProgress}
-            toggleFollowingProgress={props.toggleFollowingProgress}
+            deleteFollowThunkCreater={props.deleteFollowThunkCreater}
+            postFollowThunkCreater={props.postFollowThunkCreater}
+
         />)
 
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);

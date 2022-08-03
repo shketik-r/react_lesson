@@ -1,3 +1,6 @@
+import {getProfileApi} from '../api/api'
+
+
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_TEXT_POST = "UPDATE-NEW-TEXT-POST"
 const SET_USER_PROFILE = "SET-USER-PROFILE"
@@ -84,4 +87,17 @@ export function setProfile(profile) {
         profile,
     }
 }
+
+export function getProfileThunkCreater(userId) {      //Thunk
+    return (dispatch) => {
+        getProfileApi(userId).then(data => {
+            dispatch(setProfile(data));
+          });
+      }
+    }
+
+
+
+
+
 export default profailReducer;
